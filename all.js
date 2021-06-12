@@ -1,7 +1,6 @@
 let star = document.querySelector('.star')
 let moon = document.querySelector('.moon')
 
-
 window.addEventListener('scroll', debounce(move, 12))
 
 function move() {
@@ -49,8 +48,6 @@ let letter = '';
     setTimeout(type, 300)
 })()
 
-
-
 function appear() {
     let introductionText = document.querySelector('.introductionText');
     let contentPosition = introductionText.getBoundingClientRect().top;
@@ -63,22 +60,7 @@ function appear() {
 
 window.addEventListener('scroll', debounce(appear, 12))
 
-let cursor = document.querySelector('.cursor')
-let whatHappen = document.querySelector('.whatHappen');
-
-// whatHappen.addEventListener('mouseleave', function (e) {
-//     cursor.style.display = 'none'
-// })
-
-// whatHappen.addEventListener('mousemove', function (e) {
-//     cursor.style.display = 'flex'
-//     cursor.style.top = e.pageY + 'px'
-//     cursor.style.left = e.pageX + 'px'
-// })
-
 //介紹圖片_圖片滾動
-
-
 window.addEventListener('scroll',imgMove)
 
 function imgMove() {
@@ -107,3 +89,19 @@ function imgMove() {
         img_04.classList.add('imgAnimation')
     }
 }
+
+//游標改變事件
+// let cursor = document.querySelector('.cursor')
+// let amount = document.querySelector('.amount');
+
+// amount.addEventListener('mouseleave', function (e) {
+//     cursor.style.display = 'none'
+//     console.log('d');
+// })
+
+// amount.addEventListener('mousemove', function (e) {
+//     cursor.style.display = 'flex';
+//     cursor.style.top = e.pageY + 'px'
+//     cursor.style.left = e.pageX + 'px'
+//     console.log(e.pageY );
+// })

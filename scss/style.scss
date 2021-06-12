@@ -1,4 +1,24 @@
-* {
+@mixin pad{
+    @media(max-width: 768px){
+        @content;
+    }
+}
+@mixin mobile{
+    @media(max-width: 568px){
+        @content;
+    }
+}
+@mixin center($f,$a,$j) {
+    display: $f;
+    align-items: $a;
+    justify-content: $j;
+}
+@mixin themeColor {
+    background-color: #1f1e28;
+    color: white;
+}
+
+* {   
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -9,10 +29,11 @@
 }
 html {
     height: 100%; 
+    
 }
 
 body {
-    width: 100%;
+    width: 100%;    
 }
 
 .container {
@@ -31,22 +52,29 @@ body {
         top: 40%;
         left: 50%;
         transform: translate(-50%,50%);        
-        font-size: 80px;
+        font-size: 6rem;
+        @include mobile {
+            font-size: 3rem;
+            text-align: center;
+            line-height: 45px;
+        }
     }
+    
 }
-
 .content {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    @include center(flex,center,space-around);
+    @include themeColor;
     flex-direction: column;
     height: 120vh;
-    color: white;
     padding: 8% 4%;        
-    background-color: #1f1e28;
     .title_hear {
         font-size: 2rem;
         padding: 3%;
+        @include mobile {
+            font-size: 1.5rem;
+            padding: 0%;
+            height: 10%;            
+        }        
     }
     .title_hear::after {
         content: '';
@@ -64,12 +92,20 @@ body {
         height: 50%;
         align-items: center;
         font-size: 1.2rem;
+        @include mobile {
+            flex-direction: column;
+            padding: 4%;
+        }
         img {
             flex: 3;
             max-width:100%;
             height: auto;
             transition: 0.2s;
             box-shadow: -15px 15px 0px rgb(219, 217, 217);
+            @include mobile {
+                @include center(flex,center,center);
+                display: none;
+            } 
             &:hover {
                 transform: translate(5px,-5px);
                 box-shadow: -25px 25px 0px rgb(219, 217, 217);
@@ -81,6 +117,10 @@ body {
             opacity: 0;
             transition:　all 0.5s ease;
             transform: translateY(50px);
+            @include mobile {
+                flex: 1;
+                padding: 4%;
+            }            
         }
         .appear {
             opacity: 1;
@@ -91,17 +131,17 @@ body {
 }
 
 .whatHappen {
+    @include themeColor;
     position: relative;
     display: flex;
     align-items: center;    
-    padding: 5%;
     flex-direction: column;
-    background-color: #1f1e28;
     height: 200vh;
-    // background: rgb(31,30,40);
-    // background: linear-gradient(180deg, rgba(31,30,40,1) 62%, rgba(238,238,238,1) 91%);
+    padding: 5%;  
+    @include mobile {
+        overflow: hidden;
+    } 
     .whyText {
-        color:white;
         font-size: 2rem;
         text-align: center;
         line-height: 50px;
@@ -112,6 +152,9 @@ body {
         width: auto;
         position: absolute;
         opacity: 0;
+        @include mobile {
+            height: 20%;
+        }       
     }
     .img_01 {
         top: 20%;
@@ -140,22 +183,44 @@ body {
         transform: translate(0px);
         transition: 1s;
     }
+    @include mobile {
+        .img_02 {
+            top: 32%;
+            right: 20%;
+            transform: translate(50px);
+        }
+        .img_03 {
+            height: 16%;
+            left: 8%;
+            bottom: 32%;
+            transform: translateY(50px);
+        }
+        .img_04 {
+            height: 20%;
+            right: 20%;
+            bottom: 4%;
+            transform: translateY(50px);
+        }
+    }
 }
 
 .story {
+    @include themeColor;
     position: relative;
     display: flex;
-    // align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: #1f1e28;
-    height: 200vh;
+    height: 300vh;
     padding: 4% 8%;
-    color: white;
+    @include mobile {
+        height: 400vh;
+    } 
     h2 {
         font-size: 5rem;
         padding: 4% 0;
-        color: white;
+        @include mobile {
+            font-size: 2rem;
+        } 
     }
     p {
         font-size: 1.2rem;
@@ -167,29 +232,35 @@ body {
         }
     }
     .storyConetnt {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include center(flex,center,center);
         padding-right: 8%;
-
+        // .cursor {
+        //     width: 5rem;
+        //     height: 5rem;
+        //     background-color: white;
+        //     position: absolute;
+        //     border-radius: 50%;
+        //     pointer-events: none; //造成滑鼠無法點擊
+        //     z-index: -1;
+        // }
         p {
             display: flex;
         }
         img {
             height: 60%;
             width: auto;
-
+            @include mobile {
+                display: none;
+            } 
         }
-        
     }
 }
-
-    // .cursor {
-    //     width: 3rem;
-    //     height: 3rem;
-    //     background-color: white;
-    //     position: absolute;
-    //     border-radius: 50%;
-    //     transform: translate(-50%,-50%);
-    //     pointer-events: none; //造成滑鼠無法點擊
-    // }
+.lastConetnt {
+    background-image: url(../image/sky.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-attachment: fixed;
+    @include mobile {
+        display: none;
+    } 
+}

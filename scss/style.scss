@@ -53,10 +53,14 @@ body {
         left: 50%;
         transform: translate(-50%,50%);        
         font-size: 6rem;
+        text-align: center;
         @include mobile {
             font-size: 3rem;
-            text-align: center;
             line-height: 45px;
+        }
+        @include pad {
+            font-size: 5rem;
+            line-height: 80px;
         }
     }
     
@@ -74,7 +78,12 @@ body {
             font-size: 1.5rem;
             padding: 0%;
             height: 10%;            
-        }        
+        }     
+        @include pad {
+            font-size: 2rem;
+            padding: 0%;
+            height: 10%;            
+        }         
     }
     .title_hear::after {
         content: '';
@@ -96,6 +105,10 @@ body {
             flex-direction: column;
             padding: 4%;
         }
+        @include pad {
+            flex-direction: column;
+            padding: 4%;
+        }
         img {
             flex: 3;
             max-width:100%;
@@ -103,6 +116,10 @@ body {
             transition: 0.2s;
             box-shadow: -15px 15px 0px rgb(219, 217, 217);
             @include mobile {
+                @include center(flex,center,center);
+                display: none;
+            } 
+            @include pad {
                 @include center(flex,center,center);
                 display: none;
             } 
@@ -120,7 +137,7 @@ body {
             @include mobile {
                 flex: 1;
                 padding: 4%;
-            }            
+            }          
         }
         .appear {
             opacity: 1;
@@ -141,6 +158,9 @@ body {
     @include mobile {
         overflow: hidden;
     } 
+    @include pad {
+        overflow: hidden;
+    } 
     .whyText {
         font-size: 2rem;
         text-align: center;
@@ -154,7 +174,10 @@ body {
         opacity: 0;
         @include mobile {
             height: 20%;
-        }       
+        }     
+        @include pad {
+            height: 20%;
+        }     
     }
     .img_01 {
         top: 20%;
@@ -200,17 +223,16 @@ body {
             right: 20%;
             bottom: 4%;
             transform: translateY(50px);
-        }
+        }    
     }
 }
-
 .story {
     @include themeColor;
     position: relative;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    height: 300vh;
+    height: 320vh;
     padding: 4% 8%;
     @include mobile {
         height: 400vh;
@@ -226,6 +248,9 @@ body {
         font-size: 1.2rem;
         line-height: 45px;
         width: 100%;
+        @include pad {
+            padding: 5%;
+        } 
         span {
             font-size: 1.5rem;
             font-weight: 600;
@@ -233,34 +258,22 @@ body {
     }
     .storyConetnt {
         @include center(flex,center,center);
-        padding-right: 8%;
-        // .cursor {
-        //     width: 5rem;
-        //     height: 5rem;
-        //     background-color: white;
-        //     position: absolute;
-        //     border-radius: 50%;
-        //     pointer-events: none; //造成滑鼠無法點擊
-        //     z-index: -1;
-        // }
+        padding: 8% 0;
         p {
+            flex: 1;
             display: flex;
         }
         img {
-            height: 60%;
+            flex: 1;
+            height: 40vh;
             width: auto;
             @include mobile {
+                display: none;
+            } 
+            @include pad {
                 display: none;
             } 
         }
     }
 }
-.lastConetnt {
-    background-image: url(../image/sky.jpg);
-    height: 100vh;
-    background-size: cover;
-    background-attachment: fixed;
-    @include mobile {
-        display: none;
-    } 
-}
+

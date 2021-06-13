@@ -39,13 +39,20 @@ body {
   -webkit-transform: translate(-50%, 50%);
           transform: translate(-50%, 50%);
   font-size: 6rem;
+  text-align: center;
 }
 
 @media (max-width: 568px) {
   .container h1 {
     font-size: 3rem;
-    text-align: center;
     line-height: 45px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container h1 {
+    font-size: 5rem;
+    line-height: 80px;
   }
 }
 
@@ -76,6 +83,14 @@ body {
 @media (max-width: 568px) {
   .content .title_hear {
     font-size: 1.5rem;
+    padding: 0%;
+    height: 10%;
+  }
+}
+
+@media (max-width: 768px) {
+  .content .title_hear {
+    font-size: 2rem;
     padding: 0%;
     height: 10%;
   }
@@ -129,6 +144,16 @@ body {
   }
 }
 
+@media (max-width: 768px) {
+  .content .introduction {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 4%;
+  }
+}
+
 .content .introduction img {
   -webkit-box-flex: 3;
       -ms-flex: 3;
@@ -142,6 +167,21 @@ body {
 }
 
 @media (max-width: 568px) {
+  .content .introduction img {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
   .content .introduction img {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -216,6 +256,12 @@ body {
   }
 }
 
+@media (max-width: 768px) {
+  .whatHappen {
+    overflow: hidden;
+  }
+}
+
 .whatHappen .whyText {
   font-size: 2rem;
   text-align: center;
@@ -231,6 +277,12 @@ body {
 }
 
 @media (max-width: 568px) {
+  .whatHappen .img_01, .whatHappen .img_02, .whatHappen .img_03, .whatHappen .img_04 {
+    height: 20%;
+  }
+}
+
+@media (max-width: 768px) {
   .whatHappen .img_01, .whatHappen .img_02, .whatHappen .img_03, .whatHappen .img_04 {
     height: 20%;
   }
@@ -311,7 +363,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 300vh;
+  height: 320vh;
   padding: 4% 8%;
 }
 
@@ -338,6 +390,12 @@ body {
   width: 100%;
 }
 
+@media (max-width: 768px) {
+  .story p {
+    padding: 5%;
+  }
+}
+
 .story p span {
   font-size: 1.5rem;
   font-weight: 600;
@@ -353,17 +411,23 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding-right: 8%;
+  padding: 8% 0;
 }
 
 .story .storyConetnt p {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
 .story .storyConetnt img {
-  height: 60%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 40vh;
   width: auto;
 }
 
@@ -373,15 +437,8 @@ body {
   }
 }
 
-.lastConetnt {
-  background-image: url(../image/sky.jpg);
-  height: 100vh;
-  background-size: cover;
-  background-attachment: fixed;
-}
-
-@media (max-width: 568px) {
-  .lastConetnt {
+@media (max-width: 768px) {
+  .story .storyConetnt img {
     display: none;
   }
 }

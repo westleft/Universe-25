@@ -1,7 +1,5 @@
 # 25號宇宙 | Universe 25
 ---
-* 使用 HTML / SCSS / JavaScript
-
 ![](https://i.imgur.com/DURLfSs.jpg)
 
 
